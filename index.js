@@ -9,10 +9,10 @@ import {name as appName} from './app.json';
 
 const store = configureStore()
 
-const reactNativeRedux = (
+const ReactNativeRedux = () => (
     <Provider store={store}>
         <App />
     </Provider>
-)
+);
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => ReactNativeRedux);
