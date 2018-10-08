@@ -41,10 +41,16 @@ const startTabs = () => {
                     }
                 }
             ],
+            tabsStyle: {
+                tabBarSelectedButtonColor: '#29aaf4'
+            },
             drawer: {
                 left: {
                     screen: 'awesome-places.SideDrawer'
                 }
+            },
+            appStyle: {
+                tabBarSelectedButtonColor: '#29aaf4'
             }
         })
     })
