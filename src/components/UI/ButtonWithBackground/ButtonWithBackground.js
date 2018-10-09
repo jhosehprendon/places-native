@@ -11,10 +11,14 @@ import {
 const buttonWithBackground = props => {
 
     const content = (
-        <View style={[styles.button, {backgroundColor: props.color}]}>
-            <Text style={styles.textButton}>{props.children}</Text>
+        <View style={[styles.button, {backgroundColor: props.color}, props.disabled ? styles.disabled : null]}>
+            <Text style={[styles.textButton, props.disabled ? styles.disableText : null]}>{props.children}</Text>
         </View>
     )
+
+    if(props.disabled) {
+        return content
+    }
 
     if(Platform.OS === 'android') {
         return (
@@ -40,6 +44,13 @@ const styles = StyleSheet.create({
     textButton: {
         color: 'white', 
         fontWeight: 'bold'
+    },
+    disabled: {
+        backgroundColor: '#eee',
+       
+    },
+    disableText: {
+        color: '#aaa'
     }
 })
 
